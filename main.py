@@ -1,20 +1,24 @@
 from kivy.app import App
-# from kivy.uix.label import Label
 from kivy.uix.widget  import Widget
+from kivy.graphics import Line
 
-class TouchInput(Widget):
+
+class Draw(Widget):
     def on_touch_down(self, touch):
-        print("touch down" , touch)
-
-    def on_touch_up(self, touch):
-        print("touch up" , touch)
+        with self.canvas:
+            touch.ud["line"] = Line(points=(touch.x,touch.y))
+            touch.ud["line2"] = Line(points=(touch.x,touch.y+30))
 
     def on_touch_move(self, touch):
-        print ("touch move" , touch)
+        touch.ud["line"].points += (touch.x,touch.y)
+        touch.ud["line2"].points += (touch.x,touch.y+30)
+
+        print (touch.ud["line"].points)
+
 
 class FirstKivy(App):
     def build(self):
-        return TouchInput()
+        return Draw()
 
 
 if __name__ == "__main__":
