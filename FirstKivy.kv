@@ -1,15 +1,21 @@
-# File name : main.py
+#: import FadeTransition kivy.uix.screenmanager.FadeTransition
 
-<Button>
-	color: 0,0.9,0,1
-	font_size: 40
-	size_hint: 0.3,0.2
-	
-<FloatLayout>:
+ScreenManagement:
+	transition: FadeTransition()
+	MainScreen:
+	AnotherScreen:
+
+
+<MainScreen>:
+	name: "main"
 	Button:
-		text: "Abtin"
-		pos_hint: {"x":0.5 , "top":0.9}
+		on_release: app.root.current = "other"
+		text: "Next Screen"
+		font_size: 40
 		
+<AnotherScreen>:
+	name: "other"
 	Button:
-		text: "Hi!"
-		pos_hint: {"right":1 , "y":0}
+		on_release: app.root.current = "main"
+		text: "Home"
+		font_size: 40

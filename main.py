@@ -1,24 +1,22 @@
 from kivy.app import App
-from kivy.uix.widget  import Widget
-from kivy.graphics import Line
+from kivy.lang import Builder
+from kivy.uix.screenmanager import ScreenManager, Screen
+
+class MainScreen(Screen):
+    pass
+
+class AnotherScreen(Screen):
+    pass
+
+class ScreenManagement(ScreenManager):
+    pass
 
 
-class Draw(Widget):
-    def on_touch_down(self, touch):
-        with self.canvas:
-            touch.ud["line"] = Line(points=(touch.x,touch.y))
-            touch.ud["line2"] = Line(points=(touch.x,touch.y+30))
-
-    def on_touch_move(self, touch):
-        touch.ud["line"].points += (touch.x,touch.y)
-        touch.ud["line2"].points += (touch.x,touch.y+30)
-
-        print (touch.ud["line"].points)
-
+presentation = Builder.load_file("FirstKivy.kv")
 
 class FirstKivy(App):
     def build(self):
-        return Draw()
+        return presentation
 
 
 if __name__ == "__main__":
