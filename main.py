@@ -1,15 +1,10 @@
 from kivy.app import App
 # from kivy.uix.label import Label
-from kivy.uix.widget import Widget
-
-
-class Widgets(Widget):
-    pass
-
+from kivy.uix.floatlayout import FloatLayout
 
 class FirstKivy(App):
     def build(self):
-        return Widgets()
+        return FloatLayout()
 
 
 if __name__ == "__main__":

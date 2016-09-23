@@ -3,14 +3,13 @@
 <Button>
 	color: 0,0.9,0,1
 	font_size: 40
-	size: 300,40
+	size_hint: 0.3,0.2
 	
-	
-<Widgets>
-	Button: 
-		text: 'Abtin'
-		pos: root.width - self.width,root.y + self.height
+<FloatLayout>:
+	Button:
+		text: "Abtin"
+		pos_hint: {"x":0.5 , "top":0.9}
 		
-	Button: 
-		text: 'Koochoooloooo'
-		pos: 300,0
+	Button:
+		text: "Hi!"
+		pos_hint: {"right":1 , "y":0}
