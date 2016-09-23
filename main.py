@@ -6,31 +6,33 @@ from kivy.uix.widget import Widget
 from kivy.graphics import Line
 
 class Drawer(Widget):
-    def on_touch_down(self, touch):
-        with self.canvas:
-            touch.ud["line"] = Line(Points=(touch.x,touch.y))
+	def on_touch_down(self, touch):
+		with self.canvas:
+			touch.ud["line"] = Line(Points=(touch.x,touch.y))
 
-    def on_touch_move(self, touch):
-        touch.ud["line"].points += (touch.x,touch.y)
+	def on_touch_move(self, touch):
+		touch.ud["line"].points += (touch.x,touch.y)
 
+	def clear(self):
+		self.canvas.clear()
 
 
 class MainScreen(Screen):
-    pass
+	pass
 
 class AnotherScreen(Screen):
-    pass
+	pass
 
 class ScreenManagement(ScreenManager):
-    pass
+	pass
 
 
 presentation = Builder.load_file("FirstKivy.kv")
 
 class FirstKivy(App):
-    def build(self):
-        return presentation
+	def build(self):
+		return presentation
 
 
 if __name__ == "__main__":
-    FirstKivy().run();
+	FirstKivy().run();

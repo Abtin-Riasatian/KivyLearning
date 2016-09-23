@@ -26,3 +26,10 @@ ScreenManagement:
 			size_hint: 0.2 , 0.1
 			pos_hint: {"right":1 , "bottom":1}
 		
+		Button:
+			on_release: self.parent.children[2].clear()
+			text: "clear"
+			font_size: 40
+			color: 0,0,0,1
+			size_hint: 0.2 , 0.1
+			pos_hint: {"right":1 , "top":1}
