@@ -10,12 +10,10 @@ ScreenManagement:
 	name: "main"
 	Button:
 		on_release: app.root.current = "other"
-		text: "Next Screen"
+		text: "Start Painting!"
 		font_size: 40
+		color: 0,1,0,1
 		
 <AnotherScreen>:
 	name: "other"
-	Button:
-		on_release: app.root.current = "main"
-		text: "Home"
-		font_size: 40
+	Drawer
