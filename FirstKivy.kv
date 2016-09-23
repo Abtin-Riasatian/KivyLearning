@@ -16,4 +16,13 @@ ScreenManagement:
 		
 <AnotherScreen>:
 	name: "other"
-	Drawer
+	FloatLayout:
+		Drawer
+		Button:
+			on_release: app.root.current = "main"
+			text: "Home"
+			font_size: 40
+			color: 0,1,1,1
+			size_hint: 0.2 , 0.1
+			pos_hint: {"right":1 , "bottom":1}
+		

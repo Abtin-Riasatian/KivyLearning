@@ -13,6 +13,8 @@ class Drawer(Widget):
     def on_touch_move(self, touch):
         touch.ud["line"].points += (touch.x,touch.y)
 
+
+
 class MainScreen(Screen):
     pass
 
